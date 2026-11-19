@@ -1,0 +1,785 @@
+/* ==================================================
+   MELTUBE — HITCHHIKER 2013 RETRO YOUTUBE (TEMA ROSA)
+================================================== */
+
+:root {
+    --pink-yt: #d82b68;
+    --pink-yt-hover: #b91d54;
+    --pink-soft: #fcf1f5;
+    
+    --bg-page: #f1edf0;              /* Fundo cinza suave vintage */
+    --bg-card: #ffffff;
+    --border-card: #e3d3dc;
+    --border-light: #ece0e6;
+    --border-btn: #cca8b8;
+
+    --text-primary: #333333;
+    --text-secondary: #767676;
+    --yt-link-blue: #167ac6;         /* Azul clássico do YouTube 2013 */
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button, input {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==================================================
+   HEADER (MASTHEAD COM BOTÃO UPLOAD DO PRINT)
+================================================== */
+
+.navbar {
+    width: 100%;
+    height: 50px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-card);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn .svg-icon {
+    width: 20px;
+    height: 20px;
+    fill: #555;
+}
+
+.logo {
+    width: 105px;
+    height: auto;
+}
+
+.nav-middle {
+    flex: 1;
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+.search-box {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: stretch;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0 10px;
+    border: 1px solid var(--border-btn);
+    border-right: none;
+    border-radius: 2px 0 0 2px;
+    font-size: 13px;
+    outline: none;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.search-btn {
+    width: 58px;
+    border: 1px solid var(--border-btn);
+    border-radius: 0 2px 2px 0;
+    background: linear-gradient(to bottom, #ffffff 0%, #f0ebed 100%);
+    box-shadow: inset 0 1px 0 #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn:hover {
+    background: linear-gradient(to bottom, #f7f1f4 0%, #e6dde1 100%);
+}
+
+.search-svg {
+    width: 14px;
+    height: 14px;
+    fill: #666;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Botão Upload com Relevo Chanfrado de 2013 */
+.yt-upload-btn {
+    height: 28px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(to bottom, #ffffff 0%, #f0edf0 100%);
+    border: 1px solid var(--border-btn);
+    border-radius: 2px;
+    box-shadow: inset 0 1px 0 #ffffff, 0 1px 1px rgba(0,0,0,0.06);
+    color: #444;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.yt-upload-btn:hover {
+    background: linear-gradient(to bottom, #f7f2f5 0%, #e8e1e5 100%);
+}
+
+.upload-svg {
+    width: 14px;
+    height: 14px;
+    fill: #555;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.notif-btn .svg-icon {
+    width: 18px;
+    height: 18px;
+    fill: #666;
+}
+
+.user-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 2px;
+    border: 1px solid var(--border-btn);
+}
+
+
+/* ==================================================
+   LAYOUT GERAL DA PÁGINA DE VÍDEO
+================================================== */
+
+.play-container {
+    max-width: 1060px !important;    /* Proporção travada de 2013 (Hitchhiker) */
+    margin: 15px auto 40px !important;
+    padding: 0 15px !important;
+}
+
+.row {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.play-video {
+    flex: 1 1 670px;
+    min-width: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==================================================
+   LEITOR DE VÍDEO RETRO 2013 (CONTROLES PERSONALIZADOS)
+================================================== */
+
+.yt-player-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    overflow: hidden;
+}
+
+.yt-player-box video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+/* Barra inferior preta clássica */
+.yt-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background: linear-gradient(to top, rgba(18, 18, 18, 0.95), rgba(30, 30, 30, 0.85));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    user-select: none;
+}
+
+/* Timeline com barra rosa MelTube */
+.yt-timeline {
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: height 0.1s;
+}
+
+.yt-timeline:hover {
+    height: 7px;
+    top: -6px;
+}
+
+.yt-timeline-played {
+    height: 100%;
+    width: 0%;
+    background: var(--pink-yt);
+}
+
+.yt-scrubber-handle {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    display: none;
+}
+
+.yt-timeline:hover .yt-scrubber-handle {
+    display: block;
+}
+
+.yt-controls-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 32px;
+}
+
+.ctrl-left, .ctrl-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ctrl-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+.ctrl-svg {
+    width: 18px;
+    height: 18px;
+    fill: #e6e6e6;
+}
+
+.ctrl-btn:hover .ctrl-svg {
+    fill: #ffffff;
+}
+
+.time-label {
+    color: #e6e6e6;
+    font-size: 11px;
+    margin-left: 6px;
+}
+
+
+/* ==================================================
+   INFORMAÇÕES DO VÍDEO (EXATAMENTE COMO O PRINT DA MADONNA)
+================================================== */
+
+.watch-header {
+    padding: 12px 18px 0;
+}
+
+.tags {
+    margin-bottom: 4px;
+}
+
+.tags a {
+    color: var(--pink-yt);
+    font-size: 11px;
+}
+
+.watch-header h3 {
+    font-size: 19px;
+    font-weight: normal;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+/* Linha do Canal e Views */
+.watch-headline-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 12px;
+}
+
+.channel-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.channel-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 2px;
+    border: 1px solid var(--border-card);
+}
+
+.channel-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+}
+
+.video-count {
+    font-size: 11px;
+    color: var(--text-secondary);
+    display: block;
+    margin-top: 2px;
+}
+
+/* O BOTÃO SUBSCRIBE DUPLO DO PRINT DA MADONNA */
+.yt-subscribe-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+}
+
+.yt-sub-btn {
+    height: 26px;
+    padding: 0 10px;
+    background: linear-gradient(to bottom, #e83b77 0%, #c71b56 100%);
+    border: 1px solid #aa1347;
+    border-radius: 2px 0 0 2px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
+}
+
+.yt-sub-btn:hover {
+    background: linear-gradient(to bottom, #d62f6b 0%, #b3144a 100%);
+}
+
+.sub-play-icon {
+    width: 12px;
+    height: 12px;
+    fill: #fff;
+}
+
+/* Balão com a contagem de inscritos colado ao botão */
+.yt-sub-bubble {
+    height: 26px;
+    padding: 0 8px;
+    background: #fafafa;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 2px 2px 0;
+    color: #666;
+    font-size: 11px;
+    line-height: 24px;
+    position: relative;
+}
+
+.yt-sub-bubble::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 4px 4px 4px 0;
+    border-style: solid;
+    border-color: transparent #fafafa transparent transparent;
+}
+
+/* Visualizações e Barra de Likes/Dislikes (Sparkbar) */
+.watch-views-box {
+    text-align: right;
+}
+
+.views-count {
+    display: block;
+    font-size: 19px;
+    color: #333;
+    font-weight: normal;
+    margin-bottom: 4px;
+}
+
+.video-extras-sparkbars {
+    width: 140px;
+    height: 3px;
+    background: #ccc;
+    display: flex;
+    margin-left: auto;
+}
+
+.sparkbar-likes {
+    background: #2ba640; /* Verde clássico (ou var(--pink-yt)) */
+    height: 100%;
+}
+
+.sparkbar-dislikes {
+    background: #c62828;
+    height: 100%;
+}
+
+
+/* BARRA DE AÇÕES (LIKE/DISLIKE E ABAS ABOUT/SHARE) */
+.watch-actions-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    height: 36px;
+}
+
+.actions-left {
+    display: flex;
+    align-items: center;
+}
+
+.yt-uix-btn {
+    height: 28px;
+    padding: 0 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #666;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.yt-uix-btn:hover {
+    color: #222;
+}
+
+.action-icon {
+    width: 14px;
+    height: 14px;
+    fill: #777;
+}
+
+.actions-tabs {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.action-tab {
+    height: 100%;
+    padding: 0 14px;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.action-tab:hover {
+    color: #222;
+}
+
+/* O clássico traço rosa em baixo do "About" no print da Madonna */
+.action-tab.active {
+    color: #222;
+    border-bottom: 3px solid var(--pink-yt);
+}
+
+.action-tab.tab-icon {
+    padding: 0 8px;
+}
+
+
+/* ==================================================
+   DESCRIÇÃO E COMENTÁRIOS
+================================================== */
+
+.vid-description {
+    padding: 14px 18px 24px;
+    font-size: 12px;
+}
+
+.pub-date {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.vid-description hr {
+    border: 0;
+    border-top: 1px solid var(--border-light);
+    margin: 16px 0;
+}
+
+.vid-description h4 {
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.add-comment {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.add-comment img {
+    width: 38px;
+    height: 38px;
+    border-radius: 2px;
+}
+
+.add-comment input {
+    flex: 1;
+    height: 32px;
+    border: 1px solid var(--border-btn);
+    border-radius: 2px;
+    padding: 0 10px;
+    outline: none;
+    font-size: 12px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.old-comment {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.old-comment img {
+    width: 38px;
+    height: 38px;
+    border-radius: 2px;
+}
+
+.old-comment h3 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+.old-comment h3 span {
+    font-weight: normal;
+    color: var(--text-secondary);
+    font-size: 11px;
+    margin-left: 6px;
+}
+
+.old-comment p {
+    color: #333;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.acomment-action {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+.reply-text {
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+}
+
+.acomment-action a {
+    color: var(--yt-link-blue);
+    font-weight: bold;
+}
+
+
+/* ==================================================
+   BARRA LATERAL "UP NEXT" COM AUTOPLAY
+================================================== */
+
+.right-sidebar {
+    flex: 0 0 350px;
+    width: 350px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    padding: 12px 14px;
+}
+
+.sidebar-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.sidebar-header-row h4 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* O interruptor Autoplay original do print */
+.autoplay-block {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+.toggle-track {
+    width: 32px;
+    height: 16px;
+    background: #ccc;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-track.active {
+    background: var(--pink-yt);
+}
+
+.toggle-pill {
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.15s;
+}
+
+.toggle-track.active .toggle-pill {
+    left: 18px;
+}
+
+/* Lista de Vídeos com Tag de Duração */
+.side-video-list {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.small-thumbnail {
+    position: relative;
+    flex: 0 0 120px;
+    width: 120px;
+}
+
+.small-thumbnail img {
+    width: 120px;
+    height: 68px;
+    object-fit: cover;
+    border: 1px solid var(--border-card);
+}
+
+/* Selo com a duração do vídeo no canto */
+.vid-time-tag {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 1px 3px;
+    border-radius: 1px;
+}
+
+.vid-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.vid-info a {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: var(--yt-link-blue);
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 15px;
+    margin-bottom: 3px;
+}
+
+.channel-tag {
+    color: var(--text-secondary);
+    font-size: 11px;
+    line-height: 14px;
+}
+
+.meta-tag {
+    color: var(--text-secondary);
+    font-size: 11px;
+}

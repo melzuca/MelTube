@@ -1,0 +1,557 @@
+/* ==================================================
+   MELTUBE — HOMEPAGE 2013-2015 (BARRA DINÂMICA + ÍCONES SVG)
+================================================== */
+
+:root {
+    --pink-primary: #d92b6a;
+    --pink-dark: #b51a51;
+    --pink-soft: #fdeaf2;
+    --pink-soft-hover: #fce3ee;
+    --pink-bg: #fbedf3;
+
+    --bg-card: #ffffff;
+    --border-card: #e5cbda;
+    --border-light: #ece0e7;
+    --border-btn: #cca2b7;
+
+    --text-primary: #222222;
+    --text-secondary: #666666;
+    --yt-link-blue: #167ac6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--pink-bg);
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.navbar {
+    width: 100%;
+    height: 52px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 2px solid #eecbdc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 18px;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 2px;
+}
+
+.menu-btn:hover {
+    background: var(--pink-soft);
+}
+
+.menu-btn .svg-icon {
+    width: 22px;
+    height: 22px;
+    fill: var(--pink-primary);
+}
+
+.logo {
+    width: 110px;
+    height: auto;
+}
+
+.nav-middle {
+    flex: 1;
+    max-width: 620px;
+    margin: 0 20px;
+}
+
+.search-box {
+    width: 100%;
+    height: 33px;
+    display: flex;
+    align-items: stretch;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0 12px;
+    border: 1px solid var(--border-btn);
+    border-right: none;
+    border-radius: 2px 0 0 2px;
+    font-size: 14px;
+    outline: none;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.search-box input:focus {
+    border-color: var(--pink-primary);
+}
+
+.search-btn {
+    width: 64px;
+    border: 1px solid var(--border-btn);
+    border-radius: 0 2px 2px 0;
+    background: linear-gradient(to bottom, #ffffff 0%, #f6eaf0 100%);
+    box-shadow: inset 0 1px 0 #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn:hover {
+    background: linear-gradient(to bottom, #fdf5f8 0%, #eed5df 100%);
+}
+
+.search-svg {
+    width: 16px;
+    height: 16px;
+    fill: #555;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.yt-upload-btn {
+    height: 30px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: linear-gradient(to bottom, #ffffff 0%, #f5e4ec 100%);
+    border: 1px solid var(--border-btn);
+    border-radius: 2px;
+    box-shadow: inset 0 1px 0 #ffffff, 0 1px 1px rgba(0,0,0,0.06);
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.yt-upload-btn:hover {
+    background: linear-gradient(to bottom, #fef8fa 0%, #ecd0dd 100%);
+}
+
+.upload-svg {
+    width: 15px;
+    height: 15px;
+    fill: var(--pink-primary);
+}
+
+.user-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 2px;
+    border: 1px solid var(--border-btn);
+}
+
+
+/* ==================================================
+   SIDEBAR DINÂMICA (THE GUIDE)
+================================================== */
+
+.sidebar {
+    width: 230px;
+    height: calc(100vh - 52px);
+    position: fixed;
+    top: 52px;
+    left: 0;
+    background: #fcf6f9;
+    border-right: 1px solid var(--border-card);
+    z-index: 50;
+    transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.sidebar-scroll-wrapper {
+    width: 230px;
+    height: 100%;
+    padding: 14px 0 30px;
+    overflow-y: auto;
+}
+
+/* Secções e Títulos */
+.guide-section {
+    width: 100%;
+}
+
+.guide-heading {
+    margin: 12px 22px 6px;
+    color: #925872;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* Links da Sidebar */
+.sidebar-link {
+    width: 100%;
+    height: 36px;                    /* Altura confortável de 36px */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: #333;
+    font-size: 14px;                 /* Letra aumentada de 11px para 14px */
+    font-weight: 500;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+
+.guide-svg {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    fill: #666;
+    margin-right: 18px;
+    transition: fill 0.15s;
+}
+
+.sidebar-link:hover {
+    background: var(--pink-soft);
+    color: var(--pink-primary);
+}
+
+.sidebar-link:hover .guide-svg {
+    fill: var(--pink-primary);
+}
+
+/* Item Ativo (Destaque Sólido Rosa do YouTube 2013) */
+.sidebar-link.active {
+    background: var(--pink-primary);
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+.sidebar-link.active .guide-svg {
+    fill: #ffffff;
+}
+
+.sidebar hr {
+    height: 1px;
+    width: 100%;
+    margin: 12px 0;
+    border: 0;
+    background: var(--border-light);
+}
+
+/* Inscrições com Avatares */
+.sub-channel-link {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: #333;
+    font-size: 13.5px;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+
+.sub-channel-link:hover {
+    background: var(--pink-soft);
+}
+
+.sub-avatar {
+    width: 26px !important;
+    height: 26px !important;
+    min-width: 26px !important;
+    max-width: 26px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 14px;
+    border: 1px solid #e0c2d3;
+}
+
+.sub-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sub-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--pink-primary);
+    border-radius: 50%;
+    margin-left: 6px;
+}
+
+/* Rodapé do Guia */
+.guide-footer {
+    padding: 14px 22px;
+    font-size: 11px;
+    color: #888;
+    line-height: 18px;
+}
+
+.guide-footer a {
+    color: #666;
+    margin-right: 6px;
+}
+
+.guide-footer a:hover {
+    color: var(--pink-primary);
+    text-decoration: underline;
+}
+
+.footer-copy {
+    margin-top: 8px;
+    color: #999;
+}
+
+
+/* ==================================================
+   ESTADO DINÂMICO RECOLHIDO (COLLAPSED)
+================================================== */
+
+.sidebar.collapsed {
+    width: 70px;
+}
+
+.sidebar.collapsed .sidebar-scroll-wrapper {
+    width: 70px;
+}
+
+.sidebar.collapsed .sidebar-link {
+    padding: 0;
+    justify-content: center;
+}
+
+.sidebar.collapsed .guide-svg {
+    margin-right: 0;
+}
+
+.sidebar.collapsed .sidebar-link span,
+.sidebar.collapsed .guide-heading,
+.sidebar.collapsed .sub-name,
+.sidebar.collapsed .sub-dot,
+.sidebar.collapsed .guide-footer {
+    display: none;
+}
+
+.sidebar.collapsed .sub-channel-link {
+    padding: 0;
+    justify-content: center;
+}
+
+.sidebar.collapsed .sub-avatar {
+    margin-right: 0;
+}
+
+
+/* ==================================================
+   CONTEÚDO PRINCIPAL (INDEX SHELVES)
+================================================== */
+
+.container {
+    min-height: calc(100vh - 52px);
+    margin-left: 230px;
+    padding: 20px 32px 50px;
+    transition: margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container.expanded {
+    margin-left: 70px;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 1260px;
+    margin: 0 auto;
+}
+
+/* ==================================================
+   BANNER CORRIGIDO (PINGUINS 100% VISÍVEIS)
+================================================== */
+
+.banner {
+    width: 100%;
+    height: 170px;                   /* Altura ideal para banners de 2013 */
+    margin-bottom: 16px;
+    background: #ffffff;             /* Fundo branco que se funde com a imagem */
+    border: 1px solid var(--border-card);
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;             /* Mostra a imagem inteira sem cortar as cabeças */
+    object-position: center;         /* Centraliza os pinguins no banner */
+    background-color: #ffffff;
+}
+
+/* Ajuste para ecrãs menores/portáteis */
+@media (max-width: 768px) {
+    .banner {
+        height: 120px;
+    }
+}
+
+/* Separadores Home / Trending */
+.home-nav-tabs {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-card);
+    padding-bottom: 8px;
+}
+
+.tab-link {
+    font-size: 15px;
+    font-weight: bold;
+    color: #666;
+    padding-bottom: 8px;
+}
+
+.tab-link:hover {
+    color: #111;
+}
+
+.tab-link.active {
+    color: var(--pink-primary);
+    border-bottom: 3px solid var(--pink-primary);
+}
+
+/* O Cartão Branco da Grelha */
+.video-section {
+    width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    padding: 20px 24px 28px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.section-heading h2 {
+    color: #111;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Grelha Adaptável */
+.list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    gap: 22px 16px;
+    width: 100%;
+}
+
+.vid-list {
+    min-width: 0;
+}
+
+.thumb-link {
+    display: block;
+    width: 100%;
+    position: relative;
+    background: #000;
+}
+
+.thumbnail {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 1px solid var(--border-card);
+}
+
+.vid-badge {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 1px 4px;
+    border-radius: 1px;
+}
+
+.video-details {
+    padding-top: 10px;
+}
+
+.video-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 5px;
+    color: var(--yt-link-blue);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+.video-title:hover {
+    text-decoration: underline;
+}
+
+.channel-name {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 3px;
+}
+
+.channel-name:hover {
+    color: var(--pink-primary);
+}
+
+.video-meta {
+    color: var(--text-secondary);
+    font-size: 12px;
+}

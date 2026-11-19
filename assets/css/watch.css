@@ -1,0 +1,800 @@
+/* ==================================================
+   MELTUBE — WATCH PAGE 2013 (LETRAS GRANDES + MAIS ROSA)
+================================================== */
+
+:root {
+    --pink-primary: #d92b6a;
+    --pink-dark: #b51a51;
+    --pink-gradient-top: #ea4581;
+    --pink-gradient-bottom: #ca1b57;
+    --pink-soft: #fdeaf2;
+    --pink-bg: #fbedf3;              /* Rosa mais presente no fundo */
+
+    --bg-card: #ffffff;
+    --border-card: #e5cbda;
+    --border-light: #ece0e7;
+    --border-btn: #cca2b7;
+
+    --text-primary: #222222;
+    --text-secondary: #666666;
+    --yt-link-blue: #167ac6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--pink-bg);
+    color: var(--text-primary);
+    font-size: 14px;                 /* Aumentado de 13px */
+    line-height: 1.4;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button, input {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ==================================================
+   HEADER (MASTHEAD)
+================================================== */
+
+.navbar {
+    width: 100%;
+    height: 52px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 2px solid #eecbdc; /* Linha rosa sutil na barra superior */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn .svg-icon {
+    width: 22px;
+    height: 22px;
+    fill: var(--pink-primary);
+}
+
+.logo {
+    width: 110px;
+    height: auto;
+}
+
+.nav-middle {
+    flex: 1;
+    max-width: 620px;
+    margin: 0 20px;
+}
+
+.search-box {
+    width: 100%;
+    height: 33px;
+    display: flex;
+    align-items: stretch;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0 12px;
+    border: 1px solid var(--border-btn);
+    border-right: none;
+    border-radius: 2px 0 0 2px;
+    font-size: 14px;                 /* Aumentado */
+    outline: none;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.search-box input:focus {
+    border-color: var(--pink-primary);
+}
+
+.search-btn {
+    width: 64px;
+    border: 1px solid var(--border-btn);
+    border-radius: 0 2px 2px 0;
+    background: linear-gradient(to bottom, #ffffff 0%, #f6eaf0 100%);
+    box-shadow: inset 0 1px 0 #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn:hover {
+    background: linear-gradient(to bottom, #fdf5f8 0%, #eed5df 100%);
+}
+
+.search-svg {
+    width: 16px;
+    height: 16px;
+    fill: #555;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.yt-upload-btn {
+    height: 30px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: linear-gradient(to bottom, #ffffff 0%, #f5e4ec 100%);
+    border: 1px solid var(--border-btn);
+    border-radius: 2px;
+    box-shadow: inset 0 1px 0 #ffffff, 0 1px 1px rgba(0,0,0,0.06);
+    color: #333;
+    font-size: 12px;                 /* Aumentado */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.yt-upload-btn:hover {
+    background: linear-gradient(to bottom, #fef8fa 0%, #ecd0dd 100%);
+}
+
+.upload-svg {
+    width: 15px;
+    height: 15px;
+    fill: var(--pink-primary);
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.notif-btn .svg-icon {
+    width: 20px;
+    height: 20px;
+    fill: #666;
+}
+
+.user-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 2px;
+    border: 1px solid var(--border-btn);
+}
+
+
+/* ==================================================
+   LAYOUT GERAL DO WATCH
+================================================== */
+
+.play-container {
+    max-width: 1100px !important;
+    margin: 18px auto 45px !important;
+    padding: 0 16px !important;
+}
+
+.row {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.play-video {
+    flex: 1 1 700px;
+    min-width: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==================================================
+   LEITOR RETRO (BARRA PRETA + LINHA ROSA)
+================================================== */
+
+.yt-player-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    overflow: hidden;
+}
+
+.yt-player-box video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.yt-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 38px;
+    background: linear-gradient(to top, rgba(18, 18, 18, 0.95), rgba(30, 30, 30, 0.85));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    user-select: none;
+}
+
+.yt-timeline {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: height 0.1s;
+}
+
+.yt-timeline:hover {
+    height: 8px;
+    top: -8px;
+}
+
+.yt-timeline-played {
+    height: 100%;
+    width: 0%;
+    background: var(--pink-primary);
+}
+
+.yt-scrubber-handle {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    width: 13px;
+    height: 13px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0,0,0,0.6);
+    display: none;
+}
+
+.yt-timeline:hover .yt-scrubber-handle {
+    display: block;
+}
+
+.yt-controls-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    height: 34px;
+}
+
+.ctrl-left, .ctrl-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ctrl-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+
+.ctrl-svg {
+    width: 20px;
+    height: 20px;
+    fill: #e6e6e6;
+}
+
+.ctrl-btn:hover .ctrl-svg {
+    fill: #ff8ab6;
+}
+
+.time-label {
+    color: #e6e6e6;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+
+/* ==================================================
+   INFORMAÇÕES DO VÍDEO (LETRAS BEM MAIORES)
+================================================== */
+
+.watch-header {
+    padding: 14px 20px 0;
+}
+
+.tags a {
+    color: var(--pink-primary);
+    font-size: 12px;
+    margin-right: 6px;
+}
+
+.watch-header h3 {
+    font-size: 22px;                /* Aumentado de 19px */
+    font-weight: normal;
+    color: #111;
+    margin: 8px 0 14px;
+    line-height: 1.3;
+}
+
+.watch-headline-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 14px;
+}
+
+.channel-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.channel-avatar {
+    width: 52px;                     /* Aumentado */
+    height: 52px;
+    border-radius: 2px;
+    border: 1px solid var(--border-card);
+}
+
+.channel-title {
+    font-size: 15px;                 /* Aumentado de 13px */
+    font-weight: bold;
+    color: #222;
+    display: block;
+}
+
+.video-count {
+    font-size: 12px;
+    color: var(--text-secondary);
+    display: block;
+    margin-top: 2px;
+}
+
+/* O BOTÃO SUBSCRIBE DUPLO */
+.yt-subscribe-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 14px;
+}
+
+.yt-sub-btn {
+    height: 28px;
+    padding: 0 12px;
+    background: linear-gradient(to bottom, var(--pink-gradient-top) 0%, var(--pink-gradient-bottom) 100%);
+    border: 1px solid var(--pink-dark);
+    border-radius: 2px 0 0 2px;
+    color: #fff;
+    font-size: 12px;                 /* Aumentado */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.yt-sub-btn:hover {
+    background: linear-gradient(to bottom, #d62d69 0%, #ab1348 100%);
+}
+
+.sub-play-icon {
+    width: 14px;
+    height: 14px;
+    fill: #fff;
+}
+
+.yt-sub-bubble {
+    height: 28px;
+    padding: 0 10px;
+    background: #fafafa;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 2px 2px 0;
+    color: #555;
+    font-size: 12px;                 /* Aumentado */
+    line-height: 26px;
+    position: relative;
+}
+
+.yt-sub-bubble::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 4px 4px 4px 0;
+    border-style: solid;
+    border-color: transparent #fafafa transparent transparent;
+}
+
+/* Visualizações Grandes e Sparkbar */
+.watch-views-box {
+    text-align: right;
+}
+
+.views-count {
+    display: block;
+    font-size: 22px;                 /* Aumentado de 19px */
+    color: #222;
+    font-weight: normal;
+    margin-bottom: 4px;
+}
+
+.video-extras-sparkbars {
+    width: 155px;
+    height: 4px;
+    background: #ccc;
+    display: flex;
+    margin-left: auto;
+}
+
+.sparkbar-likes {
+    background: var(--pink-primary);
+    height: 100%;
+}
+
+.sparkbar-dislikes {
+    background: #999;
+    height: 100%;
+}
+
+
+/* BARRA DE AÇÕES (ABOUT COM LINHA ROSA) */
+.watch-actions-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    height: 40px;                    /* Aumentado */
+}
+
+.actions-left {
+    display: flex;
+    align-items: center;
+}
+
+.yt-uix-btn {
+    height: 32px;
+    padding: 0 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #555;
+    font-size: 13px;                 /* Aumentado de 11px */
+    font-weight: bold;
+}
+
+.yt-uix-btn:hover {
+    color: var(--pink-primary);
+}
+
+.action-icon {
+    width: 16px;
+    height: 16px;
+    fill: #666;
+}
+
+.actions-tabs {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.action-tab {
+    height: 100%;
+    padding: 0 16px;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 13px;                 /* Aumentado de 11px */
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.action-tab:hover {
+    color: #111;
+}
+
+.action-tab.active {
+    color: #111;
+    border-bottom: 3px solid var(--pink-primary);
+}
+
+.action-tab.tab-icon {
+    padding: 0 10px;
+}
+
+
+/* ==================================================
+   DESCRIÇÃO (TEXTO GRANDE E CONFORTÁVEL)
+================================================== */
+
+.vid-description {
+    padding: 16px 20px 28px;
+    font-size: 14px;                 /* Aumentado de 12px */
+    line-height: 1.6;
+}
+
+.pub-date {
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.desc-extra {
+    margin-top: 8px;
+    color: #444;
+}
+
+.show-more-btn {
+    display: block;
+    margin-top: 14px;
+    background: none;
+    border: none;
+    color: #777;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.show-more-btn:hover {
+    color: var(--pink-primary);
+}
+
+.vid-description hr {
+    border: 0;
+    border-top: 1px solid var(--border-light);
+    margin: 18px 0;
+}
+
+.vid-description h4 {
+    font-size: 15px;                 /* Aumentado */
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.add-comment {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.add-comment img {
+    width: 42px;
+    height: 42px;
+    border-radius: 2px;
+}
+
+.add-comment input {
+    flex: 1;
+    height: 36px;
+    border: 1px solid var(--border-btn);
+    border-radius: 2px;
+    padding: 0 12px;
+    outline: none;
+    font-size: 14px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.old-comment {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.old-comment img {
+    width: 42px;
+    height: 42px;
+    border-radius: 2px;
+}
+
+.old-comment h3 {
+    font-size: 14px;                 /* Aumentado de 12px */
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+.old-comment h3 span {
+    font-weight: normal;
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+.old-comment p {
+    color: #333;
+    font-size: 14px;                 /* Aumentado de 12px */
+    line-height: 1.5;
+}
+
+.acomment-action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.reply-text {
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+}
+
+.acomment-action a {
+    color: var(--yt-link-blue);
+    font-weight: bold;
+}
+
+
+/* ==================================================
+   BARRA LATERAL (UP NEXT)
+================================================== */
+
+.right-sidebar {
+    flex: 0 0 370px;
+    width: 370px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    padding: 14px 16px;
+}
+
+.sidebar-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.sidebar-header-row h4 {
+    font-size: 15px;                 /* Aumentado */
+    font-weight: bold;
+    color: #222;
+}
+
+.autoplay-block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.toggle-track {
+    width: 34px;
+    height: 18px;
+    background: #ccc;
+    border-radius: 9px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-track.active {
+    background: var(--pink-primary);
+}
+
+.toggle-pill {
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.15s;
+}
+
+.toggle-track.active .toggle-pill {
+    left: 18px;
+}
+
+.side-video-list {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.small-thumbnail {
+    position: relative;
+    flex: 0 0 128px;
+    width: 128px;
+}
+
+.small-thumbnail img {
+    width: 128px;
+    height: 72px;
+    object-fit: cover;
+    border: 1px solid var(--border-card);
+}
+
+.vid-time-tag {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 1px 4px;
+    border-radius: 1px;
+}
+
+.vid-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.vid-info a {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: var(--yt-link-blue);
+    font-size: 13px;                 /* Aumentado */
+    font-weight: bold;
+    line-height: 17px;
+    margin-bottom: 4px;
+}
+
+.channel-tag {
+    color: var(--text-secondary);
+    font-size: 12px;                 /* Aumentado */
+    line-height: 15px;
+}
+
+.meta-tag {
+    color: var(--text-secondary);
+    font-size: 12px;
+}

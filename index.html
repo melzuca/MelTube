@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MelTube | Início</title>
+    <link rel="icon" href="assets/images/branding/youtube (1).png">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="icon-btn menu-btn" id="menuToggle" title="Guia">
+                <svg viewBox="0 0 24 24" class="svg-icon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </button>
+            <a href="index.html">
+                <img src="assets/images/branding/logo-v2.0.png" alt="MelTube" class="logo">
+            </a>
+        </div>
+
+        <div class="nav-middle">
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+                <button type="submit" class="search-btn" title="Search">
+                    <svg viewBox="0 0 24 24" class="svg-icon search-svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 14z"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <button class="yt-upload-btn">
+                <svg viewBox="0 0 24 24" class="svg-icon upload-svg"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
+                <span>Upload</span>
+            </button>
+            <img src="assets/images/avatars/avatar-1.png" alt="Profile" class="user-icon">
+        </div>
+    </nav>
+
+
+    <!-- SIDEBAR DINÂMICA (THE GUIDE) -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-scroll-wrapper">
+
+            <!-- SECÇÃO PRINCIPAL -->
+            <div class="guide-section">
+                <a href="#" class="sidebar-link active" title="Home">
+                    <svg viewBox="0 0 24 24" class="guide-svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                    <span>Home</span>
+                </a>
+
+                <a href="#" class="sidebar-link" title="Trending">
+                    <svg viewBox="0 0 24 24" class="guide-svg"><path d="M17.53 11.2c-.23-.3-.5-.56-.76-.82-.65-.6-1.4-1.03-2.03-1.66-1.46-1.46-1.78-3.87-.85-5.72-.94.34-1.74.96-2.33 1.74-1.61 2.14-1.32 5.21.68 7.02.26.24.56.44.87.6.2.1.4.18.62.24-.1.08-.2.15-.31.22-1.87 1.25-2.52 3.66-1.52 5.67.24.48.56.92.95 1.29.62.59 1.38 1 2.2 1.2.98.24 2.01.18 2.96-.17.95-.35 1.77-.97 2.37-1.78.6-.81.9-1.8.85-2.81-.05-1.12-.49-2.18-1.24-3-.63-.69-1.37-1.28-2.06-1.92z"/></svg>
+                    <span>Trending</span>
+                </a>
+
+                <a href="#" class="sidebar-link" title="Subscriptions">
+                    <svg viewBox="0 0 24 24" class="guide-svg"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"/></svg>
+                    <span>Subscriptions</span>
+                </a>
+                <hr>
+            </div>
+
+            <!-- SECÇÃO BIBLIOTECA -->
+            <div class="guide-section">
+                <h3 class="guide-heading">LIBRARY</h3>
+                
+                <a href="#" class="sidebar-link" title="History">
+                    <svg viewBox="0 0 24 24" class="guide-svg"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
+                    <span>History</span>
+                </a>
+
+                <a href="#" class="sidebar-link" title="Playlist">
+                    <svg viewBox="0 0 24 24" class="guide-svg"><path d="M4 10h12v2H4zm0-4h12v2H4zm0 8h8v2H4zm10 0v6l5-3z"/></svg>
+                    <span>Playlist</span>
+                </a>
+                <hr>
+            </div>
+
+            <!-- CANAIS SUBSCRITOS -->
+            <div class="guide-section subscribed-list">
+                <h3 class="guide-heading">SUBSCRIBED</h3>
+
+                <a href="#" class="sub-channel-link">
+                    <img src="assets/images/avatars/avatar-1.png" alt="" class="sub-avatar">
+                    <span class="sub-name">Jeremil Jervásio</span>
+                    <span class="sub-dot"></span>
+                </a>
+                <a href="#" class="sub-channel-link">
+                    <img src="assets/images/avatars/avatar-2.png" alt="" class="sub-avatar">
+                    <span class="sub-name">Lotus Teobaldo</span>
+                </a>
+                <a href="#" class="sub-channel-link">
+                    <img src="assets/images/avatars/avatar-3.png" alt="" class="sub-avatar">
+                    <span class="sub-name">Caliope Avelino</span>
+                    <span class="sub-dot"></span>
+                </a>
+                <a href="#" class="sub-channel-link">
+                    <img src="assets/images/avatars/avatar-4.png" alt="" class="sub-avatar">
+                    <span class="sub-name">Quirn Amarilis</span>
+                </a>
+                <a href="#" class="sub-channel-link">
+                    <img src="assets/images/avatars/avatar-5.png" alt="" class="sub-avatar">
+                    <span class="sub-name">Zafira Esdras</span>
+                </a>
+                <a href="#" class="sub-channel-link">
+                    <img src="assets/images/avatars/avatar-6.png" alt="" class="sub-avatar">
+                    <span class="sub-name">Effi Quincas</span>
+                </a>
+                <hr>
+            </div>
+
+            <!-- MELHORES DO MELTUBE / EXPLORAR -->
+            <div class="guide-section">
+                <h3 class="guide-heading">BEST OF MELTUBE</h3>
+                
+                <a href="#" class="sidebar-link">
+                    <svg viewBox="0 0 24 24" class="guide-svg"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                    <span>Music</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <svg viewBox="0 0 24 24" class="guide-svg"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                    <span>Gaming</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <svg viewBox="0 0 24 24" class="guide-svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    <span>Browse Channels</span>
+                </a>
+                <hr>
+            </div>
+
+            <!-- RODAPÉ CLÁSSICO DO GUIA DE 2013 -->
+            <div class="guide-footer">
+                <p><a href="#">About</a> <a href="#">Press</a> <a href="#">Copyright</a></p>
+                <p><a href="#">Creators</a> <a href="#">Advertise</a> <a href="#">Developers</a></p>
+                <p class="footer-copy">© 2013 MelTube, LLC</p>
+            </div>
+
+        </div>
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container" id="mainContainer">
+        <div class="main-content">
+
+            <!-- BANNER -->
+            <div class="banner">
+                <img src="assets/images/branding/banner-pinguins.png" alt="MelTube banner">
+            </div>
+
+            <!-- SEPARADORES CLÁSSICOS HOME / TRENDING -->
+            <div class="home-nav-tabs">
+                <a href="#" class="tab-link active">Home</a>
+                <a href="#" class="tab-link">Trending</a>
+            </div>
+
+            <!-- GRELHA DE VÍDEOS -->
+            <section class="video-section">
+                <div class="section-heading">
+                    <h2>Recommended</h2>
+                </div>
+
+                <div class="list-container">
+
+                    <!-- VIDEO 0 - MANTER COMENTADO
+                    <article class="vid-list">
+                        <a href="pages/play-video-fogo-no-parquinho.html">
+                            <img src="assets/images/thumbnails/thumbnail-fogo-no-parquinho.png"
+                                 alt="Fogo no parquinho!" class="thumbnail">
+                        </a>
+
+                        <div class="video-details">
+                            <a href="pages/play-video-fogo-no-parquinho.html" class="video-title">
+                                Fogo no parquinho!
+                            </a>
+
+                            <a href="#" class="channel-name">CJ do amor</a>
+                            <p class="video-meta">450k Views • 2 days</p>
+                        </div>
+                    </article>
+                    -->
+
+                    <!-- VIDEO 1 -->
+                    <article class="vid-list">
+                        <a href="pages/play-video-PSY-GANGNAM-STYLE.html" class="thumb-link">
+                            <img src="assets/images/thumbnails/thumbnail-PSY-GANGNAM-STYLE.png" alt="Gangnam Style Lyrics" class="thumbnail">
+                            <span class="vid-badge">3:40</span>
+                        </a>
+                        <div class="video-details">
+                            <a href="pages/play-video-PSY-GANGNAM-STYLE.html" class="video-title">Gagnam Style Lyrics</a>
+                            <a href="#" class="channel-name">Shrek xonado</a>
+                            <p class="video-meta">130M Views • 1 days</p>
+                        </div>
+                    </article>
+
+                    <!-- VIDEO 2 -->
+                    <article class="vid-list">
+                        <a href="pages/play-video-Girls-In-The-House.html" class="thumb-link">
+                            <img src="assets/images/thumbnails/thumbnail-Girls-In-The-House.png" alt="Avengers Civil War" class="thumbnail">
+                            <span class="vid-badge">21:57</span>
+                        </a>
+                        <div class="video-details">
+                            <a href="pages/play-video-Girls-In-The-House.html" class="video-title">Avengers - Civil War</a>
+                            <a href="#" class="channel-name">Sims Zukeira</a>
+                            <p class="video-meta">3k Views • 2 years</p>
+                        </div>
+                    </article>
+
+                    <!-- VIDEO 3 -->
+                    <article class="vid-list">
+                        <a href="pages/play-video-macaquinho-do-chines.html" class="thumb-link">
+                            <img src="assets/images/thumbnails/thumbnail-macaquinho-do-chines.png" alt="Macaquinho do Chinês" class="thumbnail">
+                            <span class="vid-badge">4:10</span>
+                        </a>
+                        <div class="video-details">
+                            <a href="pages/play-video-macaquinho-do-chines.html" class="video-title">1!2!3! Macaquinho do Chinês!</a>
+                            <a href="#" class="channel-name">Aninhagameplays2011</a>
+                            <p class="video-meta">43 Views • 1 week</p>
+                        </div>
+                    </article>
+
+                    <!-- VIDEO 4 - MANTER COMENTADO
+                    <article class="vid-list">
+                        <a href="pages/play-video-MORRERAM-TODOS.html">
+                            <img src="assets/images/thumbnails/thumbnail-MORRERAM-TODOS.png"
+                                 alt="Morreram todos" class="thumbnail">
+                        </a>
+
+                        <div class="video-details">
+                            <a href="pages/play-video-MORRERAM-TODOS.html" class="video-title">
+                                MORRERAM TODOS!
+                            </a>
+
+                            <a href="#" class="channel-name">FukGege</a>
+                            <p class="video-meta">450k Views • 2 weeks</p>
+                        </div>
+                    </article>
+                    -->
+
+                    <!-- VIDEO 5 -->
+                    <article class="vid-list">
+                        <a href="pages/play-video-Fairy-Tail-Roblox.html" class="thumb-link">
+                            <img src="assets/images/thumbnails/thumbnail-Fairy-Tail-Roblox.png" alt="Fairy Tail do Roblox" class="thumbnail">
+                            <span class="vid-badge">2:15</span>
+                        </a>
+                        <div class="video-details">
+                            <a href="pages/play-video-Fairy-Tail-Roblox.html" class="video-title">Fairy Tail do Roblox</a>
+                            <a href="#" class="channel-name">rato gostoso</a>
+                            <p class="video-meta">1.263 Views • 2 days</p>
+                        </div>
+                    </article>
+
+                    <!-- VIDEO 6 -->
+                    <article class="vid-list">
+                        <a href="pages/play-video-I-Know-You-Want-Me.html" class="thumb-link">
+                            <img src="assets/images/thumbnails/thumbnail-i-know-you-want-me.png" alt="I Know You Want Me" class="thumbnail">
+                            <span class="vid-badge">3:42</span>
+                        </a>
+                        <div class="video-details">
+                            <a href="pages/play-video-I-Know-You-Want-Me.html" class="video-title">PITBULL - I know you want me (calle ocho) [Official video HD]</a>
+                            <a href="#" class="channel-name">CJ do amor</a>
+                            <p class="video-meta">69 Views • 2 days</p>
+                        </div>
+                    </article>
+
+                    <!-- VIDEO 7 -->
+                    <article class="vid-list">
+                        <a href="pages/play-video-Cherry-Blossom-LongPlay.html" class="thumb-link">
+                            <img src="assets/images/thumbnails/thumbnail-Cherry-Blossom-Longplay.png" alt="Cherry Blossom Longplay" class="thumbnail">
+                            <span class="vid-badge">29:17</span>
+                        </a>
+                        <div class="video-details">
+                            <a href="pages/play-video-Cherry-Blossom-LongPlay.html" class="video-title">Cherry Blossom Longplay</a>
+                            <a href="#" class="channel-name">Shrek xonado</a>
+                            <p class="video-meta">450k Views • 2 days</p>
+                        </div>
+                    </article>
+
+                    <!-- VIDEO 8 -->
+                    <article class="vid-list">
+                        <a href="pages/play-video-livin-la-vida-loca.html" class="thumb-link">
+                            <img src="assets/images/thumbnails/thumbnail-livin-la-vida-loca.png" alt="Livin La Vida Loca" class="thumbnail">
+                            <span class="vid-badge">3:48</span>
+                        </a>
+                        <div class="video-details">
+                            <a href="pages/play-video-livin-la-vida-loca.html" class="video-title">Livin La Vida Loca</a>
+                            <a href="#" class="channel-name">Shrek xonado</a>
+                            <p class="video-meta">45M Views • 5 years ago</p>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- SCRIPT DO DINAMISMO DA BARRA LATERAL (ABRE / FECHA) -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const mainContainer = document.getElementById('mainContainer');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+            mainContainer.classList.toggle('expanded');
+        });
+    </script>
+
+</body>
+</html>

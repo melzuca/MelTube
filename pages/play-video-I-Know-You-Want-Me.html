@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PITBULL - I know you want me - MelTube</title>
+    <link rel="icon" href="../assets/images/branding/youtube (1).png">
+    <link rel="stylesheet" href="../assets/css/watch.css">
+</head>
+
+<body>
+    
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="icon-btn menu-btn" title="Guide">
+                <svg viewBox="0 0 24 24" class="svg-icon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </button>
+            <a href="../index.html">
+                <img src="../assets/images/branding/logo.png" alt="MelTube" class="logo">
+            </a>
+        </div>
+
+        <div class="nav-middle">
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+                <button type="submit" class="search-btn" title="Search">
+                    <svg viewBox="0 0 24 24" class="svg-icon search-svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <button class="yt-upload-btn">
+                <svg viewBox="0 0 24 24" class="svg-icon upload-svg"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
+                <span>Upload</span>
+            </button>
+            <button class="icon-btn notif-btn" title="Notifications">
+                <svg viewBox="0 0 24 24" class="svg-icon"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+            </button>
+            <img src="../assets/images/avatars/avatar-1.png" alt="Profile" class="user-icon">
+        </div>
+    </nav>
+
+    <div class="container play-container">
+        <div class="row">
+            
+            <div class="play-video">
+                <div class="yt-player-box" id="playerBox">
+                    <video id="myVideo" preload="metadata" autoplay playsinline>
+                        <source src="../assets/videos/i-know-you-want-me.mp4">
+                    </video>
+
+                    <div class="yt-controls">
+                        <div class="yt-timeline" id="timeline">
+                            <div class="yt-timeline-buffer"></div>
+                            <div class="yt-timeline-played" id="timelinePlayed"></div>
+                            <div class="yt-scrubber-handle" id="scrubber"></div>
+                        </div>
+
+                        <div class="yt-controls-bottom">
+                            <div class="ctrl-left">
+                                <button class="ctrl-btn" id="playBtn" title="Play">
+                                    <svg viewBox="0 0 24 24" class="ctrl-svg" id="playIcon"><path d="M8 5v14l11-7z"/></svg>
+                                </button>
+                                <button class="ctrl-btn" id="volBtn" title="Mute">
+                                    <svg viewBox="0 0 24 24" class="ctrl-svg" id="volIcon"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                                </button>
+                                <span class="time-label" id="timeLabel">0:00 / 3:42</span>
+                            </div>
+
+                            <div class="ctrl-right">
+                                <button class="ctrl-btn" title="Settings">
+                                    <svg viewBox="0 0 24 24" class="ctrl-svg"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                                </button>
+                                <button class="ctrl-btn" id="fsBtn" title="Fullscreen">
+                                    <svg viewBox="0 0 24 24" class="ctrl-svg"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="watch-header">
+                    <div class="tags">
+                        <a href="#">#Pitbull</a> <a href="#">#CalleOcho</a> <a href="#">#UltraMusic</a>
+                    </div>
+                    <h3>PITBULL - I know you want me (calle ocho) [Official video HD]</h3>
+
+                    <div class="watch-headline-row">
+                        <div class="channel-info">
+                            <img src="../assets/images/avatars/avatar-1.png" alt="Channel" class="channel-avatar">
+                            <div>
+                                <a href="#" class="channel-title">CJ do amor</a>
+                                <span class="video-count">14 vídeos</span>
+                            </div>
+
+                            <div class="yt-subscribe-wrapper">
+                                <a href="#" class="yt-sub-btn">
+                                    <svg viewBox="0 0 24 24" class="sub-play-icon"><path d="M10 15l5-3-5-3v6zm11-10v14c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2z"/></svg>
+                                    <span>Subscribe</span>
+                                </a>
+                                <span class="yt-sub-bubble">3K</span>
+                            </div>
+                        </div>
+
+                        <div class="watch-views-box">
+                            <span class="views-count">4.215.890</span>
+                            <div class="video-extras-sparkbars" title="18k gostos">
+                                <div class="sparkbar-likes" style="width: 92%;"></div>
+                                <div class="sparkbar-dislikes" style="width: 8%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="watch-actions-bar">
+                        <div class="actions-left">
+                            <button class="yt-uix-btn like-btn">
+                                <svg viewBox="0 0 24 24" class="action-icon"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
+                                <span>18k</span>
+                            </button>
+                            <button class="yt-uix-btn dislike-btn" title="Dislike">
+                                <svg viewBox="0 0 24 24" class="action-icon"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.37-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="actions-tabs">
+                            <button class="action-tab active">About</button>
+                            <button class="action-tab">Share</button>
+                            <button class="action-tab">Add to</button>
+                            <button class="action-tab tab-icon" title="Stats">
+                                <svg viewBox="0 0 24 24" class="action-icon"><path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/></svg>
+                            </button>
+                            <button class="action-tab tab-icon" title="Report">
+                                <svg viewBox="0 0 24 24" class="action-icon"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vid-description">
+                    <p class="pub-date">Published on May 8, 2009</p>
+                    <p>The Latest & Greatest from Ultra Music </p>
+                    
+                    <button class="show-more-btn">SHOW MORE 🢓</button>
+                    
+                    <hr>
+                    <h4>99 Comments</h4>
+
+                    <div class="add-comment">
+                        <img src="../assets/images/avatars/avatar-1.png" alt="My Profile">
+                        <input type="text" placeholder="Write comment...">
+                    </div>
+
+                    <div class="old-comment">
+                        <img src="../assets/images/avatars/avatar-3.png" alt="">
+                        <div>
+                            <h3>Sims Zukeira <span>2 days ago</span></h3>
+                            <p>IDK what it is about this video that has me bursting out laughing every time i watch it</p>
+                            <div class="acomment-action">
+                                <span class="like-thumb">👍 20</span>
+                                <span class="dislike-thumb">👎</span>
+                                <span class="reply-text">REPLY</span>
+                                <a href="#">All replies</a>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="old-comment">
+                        <img src="../assets/images/avatars/avatar-4.png" alt="">
+                        <div>
+                            <h3>Aninhagameplays2011 <span>2 days ago</span></h3>
+                            <p>Wow ❤</p>
+                            <div class="acomment-action">
+                                <span class="like-thumb">👍 4</span>
+                                <span class="dislike-thumb">👎</span>
+                                <span class="reply-text">REPLY</span>
+                                <a href="#">All replies</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="old-comment">
+                        <img src="../assets/images/avatars/avatar-5.png" alt="">
+                        <div>
+                            <h3>FukGegeo <span>2 days ago</span></h3>
+                            <p>My childhood song still loving ittt</p>
+                            <div class="acomment-action">
+                                <span class="like-thumb">👍 27</span>
+                                <span class="dislike-thumb">👎</span>
+                                <span class="reply-text">REPLY</span>
+                                <a href="#">All replies</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="old-comment">
+                        <img src="../assets/images/avatars/avatar-6.png" alt="">
+                        <div>
+                            <h3>rato gostoso <span>2 days ago</span></h3>
+                            <p>Never gets old</p>
+                            <div class="acomment-action">
+                                <span class="like-thumb">👍 36</span>
+                                <span class="dislike-thumb">👎</span>
+                                <span class="reply-text">REPLY</span>
+                                <a href="#">All replies</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="old-comment">
+                        <img src="../assets/images/avatars/avatar-2.png" alt="">
+                        <div>
+                            <h3>Shrek xonado <span>2 days ago</span></h3>
+                            <p>I love this song and it’s so funny! Though I just heard about Ava Wood, and it makes me sad that she or her friend once danced to this very song, and it breaks my heart that her father was so cruel and she did nothing to deserve this. Fly high Ava! 🕊️❤</p>
+                            <div class="acomment-action">
+                                <span class="like-thumb">👍 15</span>
+                                <span class="dislike-thumb">👎</span>
+                                <span class="reply-text">REPLY</span>
+                                <a href="#">All replies</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BARRA LATERAL UP NEXT -->
+            <div class="right-sidebar">
+                <div class="sidebar-header-row">
+                    <h4>Up Next</h4>
+                    <div class="autoplay-block">
+                        <span>Autoplay</span>
+                        <div class="toggle-track active" id="autoToggle"><div class="toggle-pill"></div></div>
+                    </div>
+                </div>
+
+                <div class="side-video-list">
+                    <a href="play-video-PSY-GANGNAM-STYLE.html" class="small-thumbnail">
+                        <img src="../assets/images/thumbnails/thumbnail-PSY-GANGNAM-STYLE.png" alt="">
+                        <span class="vid-time-tag">3:40</span>
+                    </a>
+                    <div class="vid-info">
+                        <a href="play-video-PSY-GANGNAM-STYLE.html">Gagnam Style Lyrics</a>
+                        <p class="channel-tag">Shrek xonado</p>
+                        <p class="meta-tag">130M Views</p>
+                    </div>
+                </div>
+
+                <div class="side-video-list">
+                    <a href="play-video-Girls-In-The-House.html" class="small-thumbnail">
+                        <img src="../assets/images/thumbnails/thumbnail-Girls-In-The-House.png" alt="">
+                        <span class="vid-time-tag">21:57</span>
+                    </a>
+                    <div class="vid-info">
+                        <a href="play-video-Girls-In-The-House.html">Avengers - Civil War</a>
+                        <p class="channel-tag">Sims Zukeira</p>
+                        <p class="meta-tag">3 Views</p>
+                    </div>
+                </div>
+
+                <div class="side-video-list">
+                    <a href="play-video-macaquinho-do-chines.html" class="small-thumbnail">
+                        <img src="../assets/images/thumbnails/thumbnail-macaquinho-do-chines.png" alt="">
+                        <span class="vid-time-tag">4:10</span>
+                    </a>
+                    <div class="vid-info">
+                        <a href="play-video-macaquinho-do-chines.html">1!2!3! Macaquinho do Chinês!</a>
+                        <p class="channel-tag">Aninhagameplays2011</p>
+                        <p class="meta-tag">43 Views</p>
+                    </div>
+                </div>
+
+                <div class="side-video-list">
+                    <a href="play-video-Fairy-Tail-Roblox.html" class="small-thumbnail">
+                        <img src="../assets/images/thumbnails/thumbnail-Fairy-Tail-Roblox.png" alt="">
+                        <span class="vid-time-tag">2:15</span>
+                    </a>
+                    <div class="vid-info">
+                        <a href="play-video-Fairy-Tail-Roblox.html">Fairy Tail do Roblox</a>
+                        <p class="channel-tag">rato gostoso</p>
+                        <p class="meta-tag">1.263 Views</p>
+                    </div>
+                </div>
+
+                <div class="side-video-list">
+                    <a href="play-video-Cherry-Blossom-LongPlay.html" class="small-thumbnail">
+                        <img src="../assets/images/thumbnails/thumbnail-Cherry-Blossom-Longplay.png" alt="">
+                        <span class="vid-time-tag">29:17</span>
+                    </a>
+                    <div class="vid-info">
+                        <a href="play-video-Cherry-Blossom-LongPlay.html">Cherry Blossom Longplay</a>
+                        <p class="channel-tag">Shrek xonado</p>
+                        <p class="meta-tag">450k Views</p>
+                    </div>
+                </div>
+
+                <div class="side-video-list">
+                    <a href="play-video-livin-la-vida-loca.html" class="small-thumbnail">
+                        <img src="../assets/images/thumbnails/thumbnail-livin-la-vida-loca.png" alt="">
+                        <span class="vid-time-tag">3:48</span>
+                    </a>
+                    <div class="vid-info">
+                        <a href="play-video-livin-la-vida-loca.html">Livin La Vida Loca</a>
+                        <p class="channel-tag">Shrek xonado</p>
+                        <p class="meta-tag">45M Views</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('myVideo');
+        const playBtn = document.getElementById('playBtn');
+        const playIcon = document.getElementById('playIcon');
+        const volBtn = document.getElementById('volBtn');
+        const timeline = document.getElementById('timeline');
+        const timelinePlayed = document.getElementById('timelinePlayed');
+        const scrubber = document.getElementById('scrubber');
+        const timeLabel = document.getElementById('timeLabel');
+        const fsBtn = document.getElementById('fsBtn');
+        const playerBox = document.getElementById('playerBox');
+
+        function formatTime(s) {
+            const mins = Math.floor(s / 60);
+            const secs = Math.floor(s % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        playBtn.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+            } else {
+                video.pause();
+                playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+            }
+        });
+
+        video.addEventListener('timeupdate', () => {
+            if (video.duration) {
+                const percent = (video.currentTime / video.duration) * 100;
+                timelinePlayed.style.width = percent + '%';
+                scrubber.style.left = percent + '%';
+                timeLabel.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+            }
+        });
+
+        timeline.addEventListener('click', (e) => {
+            const rect = timeline.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            video.currentTime = pos * video.duration;
+        });
+
+        volBtn.addEventListener('click', () => {
+            video.muted = !video.muted;
+            volBtn.style.opacity = video.muted ? '0.4' : '1';
+        });
+
+        fsBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                playerBox.requestFullscreen().catch(err => alert(err.message));
+            } else {
+                document.exitFullscreen();
+            }
+        });
+
+        document.getElementById('autoToggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    </script>
+    <script src="../assets/js/search.js"></script>
+</body>
+</html>
